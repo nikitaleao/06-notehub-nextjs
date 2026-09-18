@@ -1,6 +1,6 @@
 import css from './page.module.css';
 
-export default function Home() {
+export default function HomePage() {
   return (
     <main className={css.main}>
       <div className={css.container}>
