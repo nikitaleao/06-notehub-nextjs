@@ -16,9 +16,7 @@ const NoteSchema = Yup.object().shape({
     .min(3, 'Title too short!')
     .max(50, 'Title too long!')
     .required('Title is required'),
-  content: Yup.string()
-    .max(500, 'Content too long!')
-    .required('Content is required'),
+  content: Yup.string().max(500, 'Content too long!'),
   tag: Yup.string()
     .oneOf(['Todo', 'Work', 'Personal', 'Meeting', 'Shopping'], 'Invalid tag')
     .required('Tag is required'),

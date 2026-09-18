@@ -15,7 +15,7 @@ export default function NotesClient() {
   const [search, setSearch] = useState('');
   const [debouncedSearch, setDebouncedSearch] = useState('');
   const [page, setPage] = useState(1);
-  const [isModalopen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleSearchChange = useDebouncedCallback((value: string) => {
     setDebouncedSearch(value);
@@ -63,7 +63,7 @@ export default function NotesClient() {
         {isError && <p>Something went wrong while fetching notes.</p>}
         {!isLoading && !isError && <NoteList notes={notesList} />}
 
-        <Modal isOpen={isModalopen} onClose={() => setIsModalOpen(false)}>
+        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
           <NoteForm onClose={() => setIsModalOpen(false)} />
         </Modal>
       </div>
